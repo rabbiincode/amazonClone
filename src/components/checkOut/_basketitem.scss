@@ -1,0 +1,35 @@
+.basketitem{
+ background: white;
+ color: black;
+ display: flex;
+ margin: 20px 0;
+
+ .image{
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
+ }
+
+ &-info{
+  padding-left: 20px;
+
+  .ratings{
+   display: flex;
+  }
+
+  .title{
+   font-size: 17px;
+   font-weight: 800;
+  }
+
+  button{
+   background: #fac14b;
+   border: 1px solid;
+   margin-top: 10px;
+   border-color: #a88734 #9c7e38 #846a29;
+   color: #111;
+  }
+ }
+
+
+}

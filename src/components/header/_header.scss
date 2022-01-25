@@ -1,0 +1,150 @@
+.header{
+  height: 65px;
+  display: flex;
+  align-items: center;
+  background: #131921;
+  color: white;
+  position: sticky;
+  justify-content: space-between;
+  top: 0;
+  z-index: 999;
+
+  .img{
+    width: 100px;
+    object-fit: contain;
+    margin-left: 20px;
+    margin-top: 5px;
+    padding-right: 20px;
+  }
+  
+  .deliver{
+    display: flex;
+    position: relative;
+    margin-right: -10px;
+
+    .location{
+      position: absolute;
+      right: 4.1rem;
+      top: 0.75rem;
+    }
+    .place{
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px;
+      color: white;
+
+      &-2{
+        font-size: 13px;
+        font-weight: 500;
+       }
+     
+       &-3{
+        font-size: 15px;
+        font-weight: 700;
+       }
+    }
+     
+  }
+
+  &-search{
+    display: flex;
+    flex: 0.9;
+    align-items: center;
+    border-radius: 25px;
+    color: black;
+    border-radius: 5px;
+    padding-left: 8px;
+    align-items: center;
+    background: #ededed;
+    font-size: 13px;
+    font-weight: 100;
+  
+    input{
+     height: 45px;
+     width: 100%;
+     padding: 10px;
+     border: none;
+     outline: none;
+    }
+  
+    .search-icon{
+     padding: 5px;
+     height: 45px !important;
+     width: 45px;
+     background: #cd9842;
+     border-radius: 5px;
+    }
+  
+   }
+
+   &-nav{
+    display: flex;
+    //justify-content: space-between;
+    align-items: center;
+
+    .row{
+      display: flex;
+      color: white;
+
+      &-1{
+        margin-top: 15px;
+      }
+
+      &-2{
+        position: relative;
+        margin-right: 20px;
+
+        .cart{
+          width: 80%;
+         //object-fit: contain;
+          height: 30%;
+        }
+
+        .basket-count{
+          position: absolute;
+          color: #cd9842;
+          left: 1.6rem;
+          bottom: 1.2rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+
+      &-3{
+        margin-top: 18px;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .flag{
+        width: 1.3rem;
+        height: 1rem;
+        object-fit: contain;
+       }
+
+       .flag-push{
+        color: lightgray;
+      }
+     }
+
+    .option{
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px;
+      color: white;
+      justify-content: space-evenly;
+
+      &-2{
+        font-size: 13px;
+        font-weight: 500;
+       }
+     
+       &-3{
+        font-size: 15px;
+        font-weight: 700;
+       }
+    }
+
+   }  
+ 
+}
