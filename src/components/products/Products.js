@@ -4,7 +4,7 @@ import './_products.scss'
 const Products = ({ image, name, price, ratings, id }) => {
 
   const [{ basket }, dispatch] = useStateValue()
-  console.log('Hello', basket);
+  //console.log('Hello', basket);
 
   const addToBasket = () => {
     //dispatch the item into the data layout

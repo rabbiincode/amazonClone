@@ -1,6 +1,9 @@
 import { useStateValue } from '../contextApi/StateProvider';
 import BasketItem from './BasketItem';
 import SubTotal from './SubTotal';
+import React, { forwardRef } from 'react'
+// import FlipMove from 'react-flip-move'
+import { Flipper, Flipped } from 'react-flip-toolkit'
 import './_checkout.scss'
 
 const CheckOut = () => {
@@ -20,8 +23,6 @@ const CheckOut = () => {
         <img src="images/home/checkout.jpg" alt="" className='pic'/>
         <img src="images/home/checkout.jpg" alt="" className='pic'/>
         <img src="images/home/checkout.jpg" alt="" className='pic'/>
-        {/* <img src="images/home/checkout.jpg" alt="" className='pic'/>
-        <img src="images/home/checkout.jpg" alt="" className='pic'/> */}
       </div>
       
       <div>
@@ -40,6 +41,7 @@ const CheckOut = () => {
              ratings='-----' 
              id='5'
           /> */}
+        <Flipper flipKey={2} stagger>
         {basket.map(item => (
           <BasketItem 
              image={item.image} 
@@ -47,8 +49,11 @@ const CheckOut = () => {
              price={item.price} 
              ratings={item.ratings} 
              id={item.id}
+             key={item.id}
           />
         ))}
+        </Flipper>
+        
       </div>
     </div>
     

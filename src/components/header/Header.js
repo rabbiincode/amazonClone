@@ -6,15 +6,22 @@ import { LocationOnOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../contextApi/StateProvider';
 import './_header.scss'
+import { auth } from '../../firebase';
 
 
 const Header = () => {
 
-  const [{basket}, dispatch] = useStateValue()
+  const [{basket, user}, dispatch] = useStateValue()
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut()
+    }
+  }
 
  return (
   <div className='header'>
-    <Link to='/'>
+    <Link to='/' style={{ textDecoration: 'none' }}>
       <img src="images/header/amazon2.jpg" alt="image" className='img'/>
     </Link>
     
@@ -39,14 +46,16 @@ const Header = () => {
        <ArrowDropDownIcon className='flag-push'/>
       </div>
 
-      <div className="option">
-       <span className="option-2">
-         Hello, Sign in
-       </span>
-       <span className="option-3 row">
-         Account & Lists <ArrowDropDownIcon style={{ marginBottom: -2, marginLeft: -4, color: 'lightGray' }}/>
-       </span>
-      </div>
+      <Link to={!user && '/signup'} style={{ textDecoration: 'none' }}>
+        <div onClick={handleAuth} className="option">
+          <span className="option-2">
+            {user ? 'Sign Out' : 'Hello, Sign in'}
+          </span>
+          <span className="option-3 row">
+            Account & Lists <ArrowDropDownIcon style={{ marginBottom: -2, marginLeft: -4, color: 'lightGray' }}/>
+          </span>
+        </div>
+      </Link>
 
       <div className="option">
        <span className="option-2">
@@ -57,7 +66,7 @@ const Header = () => {
        </span>
       </div>
 
-      <Link to='/checkout'>
+      <Link to='/checkout' style={{ textDecoration: 'none' }}>
         <div className="row row-2">
           <span className="basket-count">{basket?.length}</span>
           <img src="images/header/shop.png" alt="" className='cart'/>          
