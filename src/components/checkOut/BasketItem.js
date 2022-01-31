@@ -1,7 +1,7 @@
 import { useStateValue } from '../contextApi/StateProvider';
 import './_basketitem.scss'
 
-const BasketItem = ({ image, name, price, ratings, id }) => {
+const BasketItem = ({ image, name, price, ratings, id, hideButton }) => {
 
   const [{ basket }, dispatch] = useStateValue()
 
@@ -22,7 +22,11 @@ const BasketItem = ({ image, name, price, ratings, id }) => {
           <strong>{price}</strong>
         </p>
         <div className="ratings">{ratings}</div>
-        <button onClick={removeFromBasket}>Remove from basket</button>
+
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from basket</button>
+        )}
+        
       </div>
     </div>
   )
